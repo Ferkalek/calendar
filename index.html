@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Переключение календаря без JS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="container clearfix">
+
+        <input class="hidden" type="radio" name="modal" id="modal-open">
+        <input class="hidden" type="radio" name="modal" id="modal-close">
+
+        <!-- visible elements on header -->
+        <label class="btn fl" for="modal-open">Добавить</label>
+        <span class="btn fl">Обновить</span>
+        <label class="search fr" for="search"><input type="text" id="search" placeholder="События, дата или участник"></label>
+
+        <!-- modal -->
+        <label class="overlay" for="modal-close"></label>
+        <div class="modal">
+            <label class="close" for="modal-close">X</label>
+            <div class="modal-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci omnis praesentium repellendus reprehenderit voluptate? Amet, assumenda ullam. Culpa ea, nostrum?</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="wrap-calendar">
+
+        <!-- navigation for slider -->
+        <input type="radio" name="calendar" id="month_1">
+        <input type="radio" name="calendar" id="month_2">
+        <input type="radio" name="calendar" id="month_3">
+        <input type="radio" name="calendar" id="month_4">
+        <input type="radio" name="calendar" id="month_5" checked="checked">
+        <input type="radio" name="calendar" id="month_6">
+        <input type="radio" name="calendar" id="month_7">
+        <input type="radio" name="calendar" id="month_8">
+        <input type="radio" name="calendar" id="month_9">
+        <input type="radio" name="calendar" id="month_10">
+        <input type="radio" name="calendar" id="month_11">
+        <input type="radio" name="calendar" id="month_12">
+
+        <div class="nav-btn">
+            <label for="month_1"></label>
+            <label for="month_2"></label>
+            <label for="month_3"></label>
+            <label for="month_4"></label>
+            <label for="month_5"></label>
+            <label for="month_6"></label>
+            <label for="month_7"></label>
+            <label for="month_8"></label>
+            <label for="month_9"></label>
+            <label for="month_10"></label>
+            <label for="month_11"></label>
+            <label for="month_12"></label>
+        </div>
+
+        <!-- enter month -->
+        <div class="month">
+            <div class="overflow">
+                <div class="inner clearfix">
+                    <div class="name-month">Январь 2016</div>
+                    <div class="name-month">Февраль 2016</div>
+                    <div class="name-month">Март 2016</div>
+                    <div class="name-month">Апрель 2016</div>
+                    <div class="name-month">Май 2016</div>
+                    <div class="name-month">Июнь 2016</div>
+                    <div class="name-month">Июль 2016</div>
+                    <div class="name-month">Август 2016</div>
+                    <div class="name-month">Сентябрь 2016</div>
+                    <div class="name-month">Октябрь 2016</div>
+                    <div class="name-month">Ноябрь 2016</div>
+                    <div class="name-month">Декабрь 2016</div>
+                </div>
+            </div>
+        </div>
+
+        <span class="btn-today">Сегодня</span>
+
+        <!-- enter days of month -->
+        <div class="month-content">
+            <div class="overflow">
+                <div class="inner clearfix">
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>28</span></li>
+                            <li><span class="day">Вторник, </span><span>29</span></li>
+                            <li><span class="day">Среда, </span><span>30</span></li>
+                            <li><span class="day">Четверг, </span><span>31</span></li>
+                            <li><span class="day">Пятница, </span><span>1</span></li>
+                            <li><span class="day">Суббота, </span><span>2</span></li>
+                            <li><span class="day">Воскресенье, </span><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>31</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>1</span></li>
+                            <li><span class="day">Вторник, </span><span>2</span></li>
+                            <li><span class="day">Среда, </span><span>3</span></li>
+                            <li><span class="day">Четверг, </span><span>4</span></li>
+                            <li><span class="day">Пятница, </span><span>5</span></li>
+                            <li><span class="day">Суббота, </span><span>6</span></li>
+                            <li><span class="day">Воскресенье, </span><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>29</span></li>
+                            <li><span class="day">Вторник, </span><span>1</span></li>
+                            <li><span class="day">Среда, </span><span>2</span></li>
+                            <li><span class="day">Четверг, </span><span>3</span></li>
+                            <li><span class="day">Пятница, </span><span>4</span></li>
+                            <li><span class="day">Суббота, </span><span>5</span></li>
+                            <li><span class="day">Воскресенье, </span><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>31</span></li>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>28</span></li>
+                            <li><span class="day">Вторник, </span><span>29</span></li>
+                            <li><span class="day">Среда, </span><span>30</span></li>
+                            <li><span class="day">Четверг, </span><span>31</span></li>
+                            <li><span class="day">Пятница, </span><span>1</span></li>
+                            <li><span class="day">Суббота, </span><span>2</span></li>
+                            <li><span class="day">Воскресенье, </span><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>1</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>2</span></li>
+                            <li><span class="day">Вторник, </span><span>3</span></li>
+                            <li><span class="day">Среда, </span><span>4</span></li>
+                            <li><span class="day">Четверг, </span><span>5</span></li>
+                            <li><span class="day">Пятница, </span><span>6</span></li>
+                            <li><span class="day">Суббота, </span><span>7</span></li>
+                            <li><span class="day">Воскресенье, </span><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li class="today"><span>30</span></li>
+                            <li><span>31</span></li>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li class="not-empty"><span>3</span><div class="event"><p class="heading">ДР!</p><p>Костя Ушаков</p></div></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>30</span></li>
+                            <li><span class="day">Вторник, </span><span>31</span></li>
+                            <li><span class="day">Среда, </span><span>1</span></li>
+                            <li><span class="day">Четверг, </span><span>2</span></li>
+                            <li><span class="day">Пятница, </span><span>3</span></li>
+                            <li><span class="day">Суббота, </span><span>4</span></li>
+                            <li><span class="day">Воскресенье, </span><span>5</span></li>
+                            <li><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>27</span></li>
+                            <li><span class="day">Вторник, </span><span>28</span></li>
+                            <li><span class="day">Среда, </span><span>29</span></li>
+                            <li><span class="day">Четверг, </span><span>30</span></li>
+                            <li><span class="day">Пятница, </span><span>1</span></li>
+                            <li><span class="day">Суббота, </span><span>2</span></li>
+                            <li><span class="day">Воскресенье, </span><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>31</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>1</span></li>
+                            <li><span class="day">Вторник, </span><span>2</span></li>
+                            <li><span class="day">Среда, </span><span>3</span></li>
+                            <li><span class="day">Четверг, </span><span>4</span></li>
+                            <li><span class="day">Пятница, </span><span>5</span></li>
+                            <li><span class="day">Суббота, </span><span>6</span></li>
+                            <li><span class="day">Воскресенье, </span><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>31</span></li>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                            <li><span>4</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>29</span></li>
+                            <li><span class="day">Вторник, </span><span>30</span></li>
+                            <li><span class="day">Среда, </span><span>31</span></li>
+                            <li><span class="day">Четверг, </span><span>1</span></li>
+                            <li><span class="day">Пятница, </span><span>2</span></li>
+                            <li><span class="day">Суббота, </span><span>3</span></li>
+                            <li><span class="day">Воскресенье, </span><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>3</span></li>
+                            <li><span class="day">Вторник, </span><span>4</span></li>
+                            <li><span class="day">Среда, </span><span>5</span></li>
+                            <li><span class="day">Четверг, </span><span>6</span></li>
+                            <li><span class="day">Пятница, </span><span>7</span></li>
+                            <li><span class="day">Суббота, </span><span>8</span></li>
+                            <li><span class="day">Воскресенье, </span><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>31</span></li>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                            <li><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>31</span></li>
+                            <li><span class="day">Вторник, </span><span>1</span></li>
+                            <li><span class="day">Среда, </span><span>2</span></li>
+                            <li><span class="day">Четверг, </span><span>3</span></li>
+                            <li><span class="day">Пятница, </span><span>4</span></li>
+                            <li><span class="day">Суббота, </span><span>5</span></li>
+                            <li><span class="day">Воскресенье, </span><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>1</span></li>
+                            <li><span>2</span></li>
+                            <li><span>3</span></li>
+                            <li><span>4</span></li>
+                        </ul>
+                    </div>
+                    <div class="month-calendar">
+                        <ul class="clearfix">
+                            <li><span class="day">Понедельник, </span><span>28</span></li>
+                            <li><span class="day">Вторник, </span><span>29</span></li>
+                            <li><span class="day">Среда, </span><span>30</span></li>
+                            <li><span class="day">Четверг, </span><span>1</span></li>
+                            <li><span class="day">Пятница, </span><span>2</span></li>
+                            <li><span class="day">Суббота, </span><span>3</span></li>
+                            <li><span class="day">Воскресенье, </span><span>4</span></li>
+                            <li><span>5</span></li>
+                            <li><span>6</span></li>
+                            <li><span>7</span></li>
+                            <li><span>8</span></li>
+                            <li><span>9</span></li>
+                            <li><span>10</span></li>
+                            <li><span>11</span></li>
+                            <li><span>12</span></li>
+                            <li><span>13</span></li>
+                            <li><span>14</span></li>
+                            <li><span>15</span></li>
+                            <li><span>16</span></li>
+                            <li><span>17</span></li>
+                            <li><span>18</span></li>
+                            <li><span>19</span></li>
+                            <li><span>20</span></li>
+                            <li><span>21</span></li>
+                            <li><span>22</span></li>
+                            <li><span>23</span></li>
+                            <li><span>24</span></li>
+                            <li><span>25</span></li>
+                            <li><span>26</span></li>
+                            <li><span>27</span></li>
+                            <li><span>28</span></li>
+                            <li><span>29</span></li>
+                            <li><span>30</span></li>
+                            <li><span>31</span></li>
+                            <li><span>1</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
